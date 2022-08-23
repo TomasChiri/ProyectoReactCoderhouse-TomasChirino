@@ -1,0 +1,14 @@
+.nav_estilos{
+    padding: 14px 12px;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.logo{
+    margin-right: 8px;
+}
+
+.link_gameshop{
+    margin-right: 1.5rem;
+}
