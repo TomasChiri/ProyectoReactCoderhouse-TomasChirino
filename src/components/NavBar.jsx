@@ -1,13 +1,13 @@
 import React from "react";
+import CartWidget from "./CartWidget";
 import logo from "./images/logo.png";
 
-const NavBar = () => {
+const NavBar = ({items}) => {
     return(
         <>
         <nav className="navbar navbar-expand-lg bg-light nav_estilos">
             <div className="container-fluid">
-                <a className="navbar-brand link_gameshop" href="#"><img src={logo} alt="logo" width="50" height="40" className="d-inline-block align-middle logo"/>
-                GameShop</a>
+                <a className="navbar-brand link_gameshop" href="#"><img src={logo} alt="logo" className="d-inline-block align-middle logo"/></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -30,10 +30,11 @@ const NavBar = () => {
                         <a className="nav-link" href="#">Contacto</a>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
+                    <form className="d-flex buscador" role="search">
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
+                    <CartWidget cantidad={items.length}/>
                 </div>
             </div>
         </nav>

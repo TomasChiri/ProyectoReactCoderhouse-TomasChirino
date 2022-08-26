@@ -1,11 +1,13 @@
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 
 function App() {
+  const productos = [];
   return (
     <div>
-      <NavBar />
-      <h1>Proyecto React - Coderhouse</h1>
+      <NavBar items={productos}/>
+      <ItemListContainer greeting="¡Aca va a ir el catálogo!"/>
     </div>
   );
 }
