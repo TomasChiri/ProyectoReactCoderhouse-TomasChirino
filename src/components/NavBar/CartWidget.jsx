@@ -1,5 +1,5 @@
 import React from "react";
-import carrito from "./images/cart.svg";
+import carrito from "../images/cart.svg";
 
 const CartWidget = ({cantidad}) => {
     return(
