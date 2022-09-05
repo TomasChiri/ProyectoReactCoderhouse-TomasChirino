@@ -32,7 +32,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
           <p>Nombre del Producto</p>
           <div className="input-group">
             <button type="button" className="btn btn-primary" onClick={() => {decrementarCantidad(cantidad - 1)}} disabled={cantidad <= 1}>-</button>
-            <input type="text" className="form-control text-center" value={cantidad}/>
+            <input type="text" className="form-control text-center" value={cantidad} onChange={() => {}}/>
             <button type="button" className="btn btn-primary" onClick={() => {incrementarCantidad(cantidad + 1)}} disabled={cantidad >= itemStock}>+</button>
           </div>
           <div className='d-grid gap-2 py-3'>
