@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import './itemlistcontainer.css'
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = (props) => {
@@ -35,7 +34,6 @@ const ItemListContainer = (props) => {
         <div className="container">
         <h1 className="titulo">{props.greeting}</h1>
         <ItemList items={items}/>
-        <ItemCount stock={5} initial={1} onAdd={0}/>   
         </div>
     )
 }

@@ -26,10 +26,9 @@ export const ItemCount = ({stock, initial, onAdd}) => {
   }
   
   return (
-    <div className='container py-5'>
+    <div className='container '>
       <div className='row'>
-        <div className='col-md-2 mx-auto'>
-          <p>Nombre del Producto</p>
+        <div className='col-md-4 mx-auto'>
           <div className="input-group">
             <button type="button" className="btn btn-primary" onClick={() => {decrementarCantidad(cantidad - 1)}} disabled={cantidad <= 1}>-</button>
             <input type="text" className="form-control text-center" value={cantidad} onChange={() => {}}/>

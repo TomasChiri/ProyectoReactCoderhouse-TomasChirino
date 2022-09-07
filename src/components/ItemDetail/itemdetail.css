@@ -1,0 +1,9 @@
+.item_precio{
+    font-size: 2rem;
+    margin-top: 1.8rem;
+    background-color: #0ca8c0;
+    color: white;
+    border-radius: 12px;
+    display: inline-block;
+    padding: 8px;
+}
