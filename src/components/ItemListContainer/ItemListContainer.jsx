@@ -14,7 +14,7 @@ const ItemListContainer = (props) => {
         const promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(productos);
-            }, 500)
+            }, 2000)
         });
 
         if(tipo){
