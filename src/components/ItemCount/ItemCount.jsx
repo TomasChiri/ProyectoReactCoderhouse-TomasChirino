@@ -3,8 +3,6 @@ import "./itemcount.css";
 
 export const ItemCount = ({stock, initial, onAdd}) => {
   const [cantidad, setCantidad] = useState(initial);
-  const [itemStock, setItemStock] = useState(stock);
-  const [itemAdd, setItemAdd] = useState(onAdd);
   
   const decrementarCantidad = (valor) => {
     if (valor > 0){
@@ -13,18 +11,11 @@ export const ItemCount = ({stock, initial, onAdd}) => {
   }
 
   const incrementarCantidad = (valor) => {
-    if(valor <= itemStock){
+    if(valor <= stock){
       setCantidad(valor);
     } 
   }
 
-  const agregarProductos = () => {
-    if(cantidad <= itemStock){
-      setItemStock(itemStock - cantidad);
-      setItemAdd(itemAdd + cantidad);
-    }
-  }
-  
   return (
     <div className='container '>
       <div className='row'>
@@ -32,12 +23,11 @@ export const ItemCount = ({stock, initial, onAdd}) => {
           <div className="input-group">
             <button type="button" className="btn btn-primary" onClick={() => {decrementarCantidad(cantidad - 1)}} disabled={cantidad <= 1}>-</button>
             <input type="text" className="form-control text-center" value={cantidad} onChange={() => {}}/>
-            <button type="button" className="btn btn-primary" onClick={() => {incrementarCantidad(cantidad + 1)}} disabled={cantidad >= itemStock}>+</button>
+            <button type="button" className="btn btn-primary" onClick={() => {incrementarCantidad(cantidad + 1)}} disabled={cantidad >= stock}>+</button>
           </div>
           <div className='d-grid gap-2 py-3'>
-            <button type="button" className="btn btn-outline-success" onClick={() => {agregarProductos()}} disabled={itemStock <= 0}>Agregar al Carrito</button>
+            <button type="button" className="btn btn-outline-success" onClick={() => {onAdd(cantidad)}} disabled={stock <= 0}>Agregar al Carrito</button>
           </div>
-          <p>Productos Seleccionados: {itemAdd}</p>
         </div>
       </div>   
     </div>

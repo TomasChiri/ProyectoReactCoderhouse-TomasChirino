@@ -1,8 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import "./itemdetail.css";
+import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({item}) => {
+  const [rutaCarro, setRutaCarro] = useState(false)
+
+  const onAdd = (quantityToAdd) => {
+    setRutaCarro(true);
+  }
+
   return (
     <div className="card my-5 mx-auto py-3 w-75 shadow">
       <div className="row g-0">
@@ -14,7 +21,11 @@ export const ItemDetail = ({item}) => {
                 <h2 className="card-title text-center py-2">{item.nombre}</h2>
                 <p className="card-text">{item.descripcion}</p>
                 <p className="card-text item_precio">${item.precio}</p>
-                <ItemCount stock={5} initial={1} onAdd={0}/>   
+                {
+                  rutaCarro ? <Link to={"/cart"} className="col-md-12 my-3 btn btn-outline-success">Terminar Compra</Link> 
+                  : <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+                }
+                   
             </div>
           </div>
         </div>

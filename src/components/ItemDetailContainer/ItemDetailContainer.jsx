@@ -4,7 +4,7 @@ import { productos } from '../productos/productos';
 import { useParams } from 'react-router-dom';
 
 export const ItemDetailContainer = () => {
-    const [item, setItem] = useState({});
+    const [item, setItem] = useState();
 
     const {id} = useParams();
 
@@ -23,7 +23,10 @@ export const ItemDetailContainer = () => {
 
   return (
     <div>
-        <ItemDetail key={item.id} item={item}/>
+        {
+            item && 
+            <ItemDetail key={item.id} item={item}/>
+        }
     </div>
   );
 }

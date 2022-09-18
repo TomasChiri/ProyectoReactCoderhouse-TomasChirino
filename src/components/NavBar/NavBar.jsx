@@ -28,9 +28,6 @@ const NavBar = ({items}) => {
                             <li><Link className="dropdown-item" to={"/categoria/accesorios"}>Accesorios</Link></li>
                         </ul>
                         </li>
-                        {/* <li className="nav-item">
-                        <Link className="nav-link" to="#">Contacto</Link>
-                        </li> */}
                     </ul>
                     <form className="d-flex buscador" role="search">
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
