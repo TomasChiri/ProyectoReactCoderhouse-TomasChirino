@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 import carrito from "../images/cart.svg";
 
-const CartWidget = ({cantidad}) => {
+const CartWidget = () => {
+    const {productosTotales} = useContext(CartContext)
+
     return(
         <>
         <div className="carro">
-            <a href="#" className="nav-link"><img className="carro_imagen" src={carrito} alt="carrito" /><p className="carro_cantidad">{cantidad}</p></a>
-            
+            <Link to={"/cart"} className="nav-link"><img className="carro_imagen" src={carrito} alt="carrito" /><p className="carro_cantidad">{productosTotales()}</p></Link>       
         </div>
         </>
     );

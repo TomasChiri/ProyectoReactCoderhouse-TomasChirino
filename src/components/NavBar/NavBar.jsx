@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import './navbar.css'
 import CartWidget from "./CartWidget";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 
-const NavBar = ({items}) => {
+const NavBar = () => {
+    const {productosTotales} = useContext(CartContext);
+
     return(
         <>
         <nav className="navbar navbar-expand-lg bg-light nav_estilos">
@@ -33,7 +36,14 @@ const NavBar = ({items}) => {
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
-                    <CartWidget cantidad={items.length}/>
+                    {/* Con esta condicion hago que el carrito no se muestre hasta que se agreguen productos
+                        {
+                            productosTotales() &&  <CartWidget />
+                        } 
+                    */}
+
+                    
+                    <CartWidget />
                 </div>
             </div>
         </nav>

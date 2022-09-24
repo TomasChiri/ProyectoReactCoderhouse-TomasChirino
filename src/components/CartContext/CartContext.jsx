@@ -8,14 +8,19 @@ export const CartProvider = ({children}) => {
         let productoExiste = carrito.find(prod => prod.id === item.id);
         if(productoExiste){
             productoExiste.quantity += quantity;
-            console.log("carrito: ", carrito);
         }else{
             const producto = {...item, quantity};
             setCarrito([...carrito, producto]);
         }
     }
 
-    console.log("carrito: ", carrito);
+    const precioTotal = () => {
+        return carrito.reduce((sumador, item) => sumador + item.quantity * item.precio, 0);
+    }
+
+    const productosTotales = () => {
+        return carrito.reduce((sumador, item) => sumador + item.quantity, 0);
+    }
 
     const clear = () => setCarrito([]);
 
@@ -30,7 +35,7 @@ export const CartProvider = ({children}) => {
 
 
   return (
-    <CartContext.Provider value={{carrito, clear, isInCart, removeItem, addItem}}>
+    <CartContext.Provider value={{carrito, clear, isInCart, removeItem, addItem, precioTotal, productosTotales}}>
         {children}
     </CartContext.Provider>
   );

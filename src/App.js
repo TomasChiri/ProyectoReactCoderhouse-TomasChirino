@@ -5,17 +5,18 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import CartProvider from './components/CartContext/CartContext';
+import Cart from './components/Cart/Cart';
 
 function App() {
-  const productos = [];
   return (
     <BrowserRouter>
       <CartProvider>
-        <NavBar items={productos}/>
+        <NavBar />
         <Routes>
           <Route path='/' element={<ItemListContainer greeting="¡Nuestros Productos!"/>}/>
           <Route path='/categoria/:tipo' element={<ItemListContainer greeting="¡Nuestros Productos!"/>}/>
           <Route path='/detalle/:id' element={<ItemDetailContainer />}/>
+          <Route path='/cart' element={<Cart />}/>
         </Routes>
       </CartProvider> 
     </BrowserRouter>
