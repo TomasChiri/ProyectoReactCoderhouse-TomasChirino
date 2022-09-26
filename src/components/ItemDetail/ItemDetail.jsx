@@ -26,7 +26,7 @@ export const ItemDetail = ({item}) => {
                 <p className="card-text item_precio">${item.precio}</p>
                 {
                   rutaCarro ? <Link to={"/cart"} className="col-md-12 my-3 btn btn-outline-success">Terminar Compra</Link> 
-                  : <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+                  : <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
                 }
                    
             </div>

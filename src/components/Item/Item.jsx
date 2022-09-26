@@ -8,7 +8,7 @@ export const Item = (item) => {
             <img src={item.imagen} className="card-img-top" alt={item.nombre} />
             <div className="card-body">
                 <h4 className="card-title text-center my-3">{item.nombre}</h4>
-                <p className="card-text text-center">Categoria: {item.categoria}</p>
+                <p className="card-text text-center text-capitalize">Categoria: {item.categoria}</p>
                 <div className='d-flex justify-content-center'>
                   <Link to={"/detalle/" + item.id} className="btn btn-outline-primary my-2">Ver mas</Link>
                 </div>
