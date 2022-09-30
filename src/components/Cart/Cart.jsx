@@ -4,7 +4,7 @@ import { CartContext } from '../CartContext/CartContext';
 import ItemCart from '../ItemCart/ItemCart';
 
 export const Cart = () => {
-    const {carrito, precioTotal } = useContext(CartContext);
+    const {carrito, precioTotal, clear } = useContext(CartContext);
 
     if(carrito.length === 0){
         return(
@@ -17,12 +17,16 @@ export const Cart = () => {
 
 
     return (
-        <>
-        {
-            carrito.map(item => <ItemCart key={item.id} item={item}/>)
-        }
-        <h2 className='text-center'>Total: ${precioTotal()}</h2>
-        </>
+        <div className='w-50 mx-auto'>
+            <div className='d-flex justify-content-end my-3'>
+                <button className='btn btn-danger' onClick={() => clear()}>Vaciar Carrito</button>
+            </div>
+            {
+                carrito.map(item => <ItemCart key={item.id} item={item}/>)
+            }
+            <h2 className='text-center'>Total: ${precioTotal()}</h2>
+            <Link to={"/checkout"} className="col-md-12 my-3 btn btn-success">Ir al Checkout</Link>
+        </div>
     )
 }
 

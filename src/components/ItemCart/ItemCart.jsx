@@ -5,7 +5,7 @@ export const ItemCart = ({item}) => {
     const {removeItem} = useContext(CartContext);
 
   return (
-    <div className="card mb-3 w-50 mx-auto">
+    <div className="card mb-3 mx-auto">
         <div className="row g-0">
             <div className="col-md-4">
                 <img src={item.imagen} className="img-fluid rounded-start" alt={item.nombre} />
