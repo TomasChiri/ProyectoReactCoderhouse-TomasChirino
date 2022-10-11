@@ -2,13 +2,14 @@ import React, { useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
 import ItemCart from '../ItemCart/ItemCart';
+import "./cart.css";
 
 export const Cart = () => {
     const {carrito, precioTotal, clear } = useContext(CartContext);
 
     if(carrito.length === 0){
         return(
-            <div className='text-center'>
+            <div className='text-center carro_vista'>
                 <h2>El carrito está vacío</h2>
                 <Link to={"/"}>¡Haz click aqui para ver nuestros productos!</Link> 
             </div>
@@ -17,7 +18,7 @@ export const Cart = () => {
 
 
     return (
-        <div className='w-50 mx-auto'>
+        <div className='w-50 mx-auto carro_vista'>
             <div className='d-flex justify-content-end my-3'>
                 <button className='btn btn-danger' onClick={() => clear()}>Vaciar Carrito</button>
             </div>

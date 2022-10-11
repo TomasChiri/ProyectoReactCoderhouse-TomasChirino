@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../CartContext/CartContext';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import Success from '../Success/Success';
+import "./checkout.css";
 
 export const Checkout = () => {
     const {carrito, clear, productosTotales, precioTotal} = useContext(CartContext);
@@ -18,9 +19,6 @@ export const Checkout = () => {
         })
         const order = {buyer:buyer, items:items, date:new Date(), total:precioTotal()}
         
-        //Dejo un console log aca para mostrar en la entrega del desafio que se guardó todo bien
-        console.log(order);
-
         const db = getFirestore();
         const orderCollection = collection(db, "orders");
         addDoc(orderCollection, order).then((data) => {
@@ -30,7 +28,7 @@ export const Checkout = () => {
     }
 
   return (
-    <div className='container'>
+    <div className='container checkout'>
         {productosTotales() > 0 ?
             <div className='row'>
                 <div className='col-md-4 offset-md-2'>

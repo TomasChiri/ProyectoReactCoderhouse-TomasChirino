@@ -1,0 +1,12 @@
+.footer{
+    margin-top: 1.5rem;
+    height: 100px;
+    background-color: #F8F9FA;
+    box-shadow: 0 0 5px 5px rgb(0 0 0 / 15%);
+    padding: 0 1rem;
+}
+
+.footer_logo{
+    height: 90%;
+
+}
